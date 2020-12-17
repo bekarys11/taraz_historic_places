@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import Nav from './components/Nav.js';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Place from './components/Place.js';
+
+import { ListOfPlaces } from './components/Place.js';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Nav />
+      <Switch>
+        <Route path="/" />
+      </Switch>
+      <h1>Места и памятники</h1>
+      <div className="places">
+        {ListOfPlaces.slice(1, 4).map((place) => (
+          <Place key={place.id} srcOfImg={place.src} name={place.name} />
+        ))}
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,22 @@
+body {
+  font-size: 10px;
+}
+
+.container {
+  margin-left: 1rem;
+  max-width: 20rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.photo {
+  width: 20rem;
+  height: 16rem;
+}
+
+.name-of-place {
+  font-size: 1rem;
+}
+
+.desciption-of-place {
+  font-size: 0.9rem;
+}
